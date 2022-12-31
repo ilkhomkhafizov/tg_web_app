@@ -1,10 +1,9 @@
 import React from "react";
 import { useLottie } from "lottie-react";
-import dentist from "../../lotties/dentist.json";
 
-export default function CardImage() {
+export default function CardImage({lottie}) {
   const options = {
-    animationData: dentist,
+    animationData: lottie,
     loop: true,
   };
 
