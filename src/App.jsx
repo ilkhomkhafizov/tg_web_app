@@ -1,13 +1,22 @@
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CardImage from './components/Card/CardImage';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
+  const [getBlogContent, setGetBlogContent] = useState([]);
+  const getData = (blog) => {
+    setGetBlogContent(blog);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-3xl font-bold underline">Hello</h1>
-        <CardImage />
-      </header>
+    <div className='App-header'>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<HomePage data={getData}/>} />
+          {/* <Route path="/blog/:id" element={<BlogPost content={getBlogContent}/>} /> */}
+        </Routes>
+      </div>
     </div>
   );
 }
